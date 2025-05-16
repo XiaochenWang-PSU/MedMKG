@@ -46,35 +46,32 @@ To use the image data, you **must** request access and agree to the data use agr
 Below is a demo script to load and link the knowledge graph with your local image data:
 
 ```python
+from huggingface_hub import hf_hub_download
 import pandas as pd
 
-# User-provided local path to mimic-cxr-jpg root
+# Add repo_type="dataset" to avoid 404
+kg_path = hf_hub_download(repo_id="xcwangpsu/MedMKG", filename="MedMKG.csv", repo_type="dataset")
+mapping_path = hf_hub_download(repo_id="xcwangpsu/MedMKG", filename="image_mapping.csv", repo_type="dataset")
+
+# Load CSVs
+kg_df = pd.read_csv(kg_path)
+mapping_df = pd.read_csv(mapping_path)
+
+# Local path to downloaded MIMIC-CXR images
 local_root = "/path/to/your/mimic-cxr-jpg"
 
-# Load datasets
-kg_df = pd.read_csv("knowledge_graph.csv")
-mapping_df = pd.read_csv("image_mapping.csv")
-
-# Build image ID → full local path mapping
+# Map image IDs to full paths
 iid_to_path = {
     row["IID"]: f"{local_root}/{row['Image_Path']}"
     for _, row in mapping_df.iterrows()
 }
 
-# Add image paths to knowledge graph (if Head or Tail is an image)
+# Merge image path info into KG
 kg_df["Head_Path"] = kg_df["Head"].map(iid_to_path)
 kg_df["Tail_Path"] = kg_df["Tail"].map(iid_to_path)
 
-# Example display
-print("Sample with resolved image paths:")
 print(kg_df.head())
 
-# Filter rows with image entities
-image_rows = kg_df[
-    kg_df["Head"].str.startswith("I") | kg_df["Tail"].str.startswith("I")
-]
-print("\nRows with image entities:")
-print(image_rows.head())
 
 ```
 
