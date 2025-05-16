@@ -1,7 +1,7 @@
 
 # MedMKG: Medical Multimodal Knowledge Graph
 
-To bridge this gap, we introduce **MedMKG**, a **Med**ical **M**ultimodal **K**nowledge **G**raph that seamlessly fuses clinical concepts with medical images.  
+We introduce **MedMKG**, a **Med**ical **M**ultimodal **K**nowledge **G**raph that seamlessly fuses clinical concepts with medical images.  
 MedMKG is constructed via a multi-stage pipeline that accurately identifies and disambiguates medical concepts while extracting their interrelations.  
 To ensure the conciseness of the resulting graph, we further employ a pruning strategy based on our novel Neighbor-aware Filtering (NaF) algorithm.
 
