@@ -1,0 +1,22 @@
+{
+    "seed": 42,
+    "gpu_id": 0,
+    "clip_model_name": "hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+    "datasets": [
+        "vqa_rad"
+    ],
+    "data_paths": {
+        "vqa_rad": "/data/xiaochen/MEDVQA/data_RAD"
+    },
+    "val_split": 0.1,
+    "batch_size": 128,
+    "num_workers": 47,
+    "num_epochs": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "patience": 5,
+    "projection_dim": 512,
+    "max_length": 77,
+    "checkpoint_dir": "checkpoints",
+    "experiment_name": "med_vqa_experiment"
+}
