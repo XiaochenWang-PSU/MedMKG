@@ -75,3 +75,15 @@ image_rows = kg_df[
 ]
 print("\nRows with image entities:")
 print(image_rows.head())
+
+```
+
+## Benchmark Instruction
+
+We cover codes for three downstream tasks detailed in our paper, including link prediction, knowledge-augmented visual question answering, and knowledge-augmented text-image retrieval. You may check the three folders and execute the following:
+
+```bash
+python main.py
+```
+
+after specifying your local paths of data files.
