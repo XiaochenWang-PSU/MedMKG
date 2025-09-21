@@ -10,7 +10,7 @@ To ensure the conciseness of the resulting graph, we further employ a pruning st
 ## 📂 Provided Files
 
 This repository contains:
-- `knowledge_graph.csv` — biomedical triplets: Head, Relation, Tail, Head_Name, Tail_Name
+- `MedMKG.csv` — biomedical triplets: Head, Relation, Tail, Head_Name, Tail_Name
 - `image_mapping.csv` — image ID to **relative path** mappings
 
 **Note:** The images themselves are **not included**. Users must download MIMIC-CXR-JPG separately and specify their local path.
@@ -46,12 +46,10 @@ To use the image data, you **must** request access and agree to the data use agr
 Below is a demo script to load and link the knowledge graph with your local image data:
 
 ```python
-from huggingface_hub import hf_hub_download
 import pandas as pd
 
-# Add repo_type="dataset" to avoid 404
-kg_path = hf_hub_download(repo_id="xcwangpsu/MedMKG", filename="MedMKG.csv", repo_type="dataset")
-mapping_path = hf_hub_download(repo_id="xcwangpsu/MedMKG", filename="image_mapping.csv", repo_type="dataset")
+kg_path = "MedMKG.csv"
+mapping_path = "image_mapping.csv"
 
 # Load CSVs
 kg_df = pd.read_csv(kg_path)
