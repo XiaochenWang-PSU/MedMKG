@@ -6,7 +6,7 @@
         "vqa_rad"
     ],
     "data_paths": {
-        "vqa_rad": "/data/xiaochen/MEDVQA/data_RAD"
+        "vqa_rad": "/MEDVQA/data_RAD"
     },
     "val_split": 0.1,
     "batch_size": 128,
