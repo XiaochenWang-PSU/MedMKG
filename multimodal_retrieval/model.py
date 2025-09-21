@@ -39,7 +39,7 @@ class KGTriplet:
     tail_name: str  # Tail name/description
 
 class KnowledgeGraphRetriever:
-   def __init__(self, kg_path: str, image_map_path: str = "/data/xiaochen/semmed/image_id_map_with_best_image.csv", clip_model=None, processor=None,
+   def __init__(self, kg_path: str, image_map_path: str = "image_mapping.csv", clip_model=None, processor=None,
                 lambda_diversity: float = 0.8, biomedclip = False):
        self.clip_model = clip_model
        self.processor = processor
@@ -808,3 +808,4 @@ class KnowledgeClip(nn.Module):
         
         loss = F.cross_entropy(similarity, labels) + F.cross_entropy(similarity.T, labels)
         return loss / 2
+
