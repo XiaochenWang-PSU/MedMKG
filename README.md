@@ -1,5 +1,5 @@
 
-# MedMKG: Radiological Multimodal Knowledge Graph
+# MedMKG: Medical Multimodal Knowledge Graph
 
 We introduce **MedMKG**, a a **Med**ical **M**ultimodal Knowledge Graph that seamlessly fuses clinical concepts with medical images.  
 RadMKG is constructed via a multi-stage pipeline that accurately identifies and disambiguates medical concepts while extracting their interrelations.  
