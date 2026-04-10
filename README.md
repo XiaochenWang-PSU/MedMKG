@@ -82,3 +82,7 @@ python main.py
 ```
 
 after specifying your local paths of data files.
+
+## Further Question on Data Access
+
+In case there is any further question regarding data access, please contact xcwang [AT] psu.edu
