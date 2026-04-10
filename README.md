@@ -85,4 +85,4 @@ after specifying your local paths of data files.
 
 ## Further Question on Data Access
 
-In case there is any further question regarding data access, please contact xcwang [AT] psu.edu
+In case there are any further questions regarding data access, please contact xcwang [AT] psu.edu.
